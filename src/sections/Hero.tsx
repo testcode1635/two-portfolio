@@ -21,7 +21,7 @@ const Hero: FC = () => {
   //12/5 = 2.4*100=240
   useEffect(() => {
     new SplitType(titleScope.current, {
-      types: "lines,words ",
+      types: "lines,words",
       tagName: "span",
     });
     titleAnimate(

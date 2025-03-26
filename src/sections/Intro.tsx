@@ -9,7 +9,7 @@ const Intro: FC = () => {
   const inView = useInView(scope, { once: true });
   useEffect(() => {
     new SplitType(scope.current.querySelector("h2"), {
-      types: "lines,words ",
+      types: "lines,words",
       tagName: "span",
     });
   }, [scope]);

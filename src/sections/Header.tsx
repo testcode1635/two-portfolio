@@ -1,8 +1,8 @@
 "use client";
 import Button from "@/components/Button";
 import { motion, useAnimate } from "framer-motion";
-import { FC, useEffect, useState } from "react";
 
+import { FC, MouseEvent as ReactMouseEvent, useEffect, useState } from "react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
   {
@@ -114,7 +114,7 @@ const Header: FC = () => {
     navScope,
     navAnimate,
   ]);
-  const handleClickMobileNavItem = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleClickMobileNavItem = (e: ReactMouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsOpen(false);
     const url = new URL(e.currentTarget.href);
