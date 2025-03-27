@@ -1,8 +1,10 @@
+"use client";
 import image1 from "@/assets/images/testimonial-1.jpg";
 import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
-import Image from "next/image";
-import { FC } from "react";
+import Testimonial from "@/components/Testimonial";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { FC, useRef, useState } from "react";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const testimonials = [
@@ -36,53 +38,78 @@ const testimonials = [
 ];
 
 const Testimonials: FC = () => {
-  const testimonialIndex = 0;
+  const titleRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: titleRef,
+    offset: ["start end", "end start"],
+  });
+  const transformTop = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const transformBottom = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const handleClickPrev = () => {
+    setTestimonialIndex((curr) => {
+      if (curr === 0) {
+        return testimonials.length - 1;
+      }
+      return curr - 1;
+    });
+  };
+  const handleClickNext = () => {
+    setTestimonialIndex((curr) => {
+      if (curr === testimonials.length - 1) {
+        return 0;
+      }
+      return curr + 1;
+    });
+  };
   return (
     <section className="section" id="testimonials">
-      <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden tracking-tighter ">
-        Testimonials
-        <span className="whitespace-nowrap">
+      <h2
+        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden tracking-tighter"
+        ref={titleRef}
+      >
+        {/* Testimonials */}
+        <motion.span
+          className="whitespace-nowrap"
+          style={{
+            x: transformTop,
+          }}
+        >
           some nice word from my post clients
-        </span>
-        <span className=" whitespace-nowrap self-end text-orange-500">
+        </motion.span>
+        <motion.span
+          className=" whitespace-nowrap self-end text-orange-500"
+          style={{
+            x: transformBottom,
+          }}
+        >
           some nice word from my post clients
-        </span>
+        </motion.span>
       </h2>
       <div className="container">
         <div className="mt-20">
-          {testimonials.map(
-            ({ name, company, role, quote, image, imagePositionY }, index) =>
-              index === testimonialIndex && (
-                <div
-                  key={name}
-                  className="grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center"
-                >
-                  <div className="aspect-square md:aspect-[9/16] md:col-span-2">
-                    <Image
-                      src={image}
-                      alt={`${name} image`}
-                      className="size-full object-cover"
-                      style={{
-                        objectPosition: `50 ${imagePositionY * 100}%`,
-                      }}
-                    />
-                  </div>
-                  <blockquote className="md:col-span-3">
-                    <div className="text-3xl md:text-5xl lg:text-6xl mt-8 md:mt-0">
-                      <span>&ldquo;</span>
-                      <span>{quote}</span>
-                      <cite className=" block mt-4 md:mt-8 not-italic md:text-lg ">
-                        {name},{role} at {company}
-                      </cite>
-                      <span>&rdquo;</span>
-                    </div>
-                  </blockquote>
-                </div>
-              )
-          )}
+          <AnimatePresence mode="wait" initial={false}>
+            {testimonials.map(
+              ({ name, company, role, quote, image, imagePositionY }, index) =>
+                index === testimonialIndex && (
+                  <Testimonial
+                    name={name}
+                    company={company}
+                    role={role}
+                    quote={quote}
+                    image={image}
+                    imagePositionY={imagePositionY}
+                    key={name}
+                  />
+                )
+            )}
+          </AnimatePresence>
         </div>
         <div className="flex  gap-4 mt-6 lg:mt-10">
-          <button className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full">
+          <button
+            className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+            onClick={handleClickPrev}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -98,7 +125,10 @@ const Testimonials: FC = () => {
               />
             </svg>
           </button>
-          <button className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full">
+          <button
+            className="border border-stone-400 size-11 inline-flex items-center justify-center rounded-full hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+            onClick={handleClickNext}
+          >
             {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"

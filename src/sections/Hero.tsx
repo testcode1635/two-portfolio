@@ -5,9 +5,8 @@ import heroImage from "@/assets/images/hero-image.jpg";
 import Button from "@/components/Button";
 import Image from "next/image";
 
-import { stagger } from "motion";
+import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import { motion, useAnimate, useScroll, useTransform } from "motion/react";
-import SplitType from "split-type";
 //import SplitType from "split-type";
 
 const Hero: FC = () => {
@@ -18,23 +17,27 @@ const Hero: FC = () => {
     offset: ["start end", "end end"],
   });
   const portraitWidth = useTransform(scrollYProgress, [0, 1], ["100%", "240%"]);
-  //12/5 = 2.4*100=240
+  const { scope, entranceAnimation } = useTextRevealAnimation();
   useEffect(() => {
-    new SplitType(titleScope.current, {
-      types: "lines,words",
-      tagName: "span",
-    });
-    titleAnimate(
-      titleScope.current.querySelectorAll(".word"),
-      {
-        transform: "translateY(0)",
-      },
-      {
-        duration: 0.5,
-        delay: stagger(0.2),
-      }
-    );
-  }, []);
+    entranceAnimation();
+  }, [entranceAnimation]);
+  //12/5 = 2.4*100=240
+  // useEffect(() => {
+  //   new SplitType(titleScope.current, {
+  //     types: "lines,words",
+  //     tagName: "span",
+  //   });
+  //   titleAnimate(
+  //     titleScope.current.querySelectorAll(".word"),
+  //     {
+  //       transform: "translateY(0)",
+  //     },
+  //     {
+  //       duration: 0.5,
+  //       delay: stagger(0.2),
+  //     }
+  //   );
+  // }, []);
   return (
     <section>
       <div className="grid md:grid-cols-12 md:h-screen items-stretch sticky top-0">
@@ -44,7 +47,7 @@ const Hero: FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-5xl md:text-6xl lg:text-7xl mt-40 md:mt-0 "
-              ref={titleScope}
+              ref={scope}
             >
               Creating digital experience through code and creative design
             </motion.h1>
