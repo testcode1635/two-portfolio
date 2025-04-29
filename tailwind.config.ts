@@ -26,7 +26,7 @@ const config: Config = {
       },
       colors: {
         "red-orange": {
-          500: 'color-max(in srgb, theme("colors.red.500"), theme("colors.orange.500") 50%)',
+          500: 'color-max(in srgb,theme("colors.red.500")50%,theme("colors.orange.500") 50%)',
         },
       },
     },

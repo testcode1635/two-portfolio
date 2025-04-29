@@ -11,3 +11,8 @@
 .word {
   @apply translate-y-full;
 }
+@layer utilities {
+  .container {
+    @apply lg:max-w-5xl;
+  }
+}

@@ -3,9 +3,11 @@ import Footer from "@/sections/Footer";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
 import Intro from "@/sections/Intro";
-import Projects from "@/sections/Projects";
-import Testimonials from "@/sections/Testimonials";
 
+import Projects from "@/sections/Projects";
+
+import { ProjectsSection } from "@/sections/ProjectsSection";
+import Testimonials from "@/sections/Testimonials";
 export default function Home() {
   return (
     <>
@@ -15,6 +17,7 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <FAQs />
+      <ProjectsSection />
       <Footer />
     </>
   );

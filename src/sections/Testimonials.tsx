@@ -75,7 +75,7 @@ const Testimonials: FC = () => {
             x: transformTop,
           }}
         >
-          some nice word from my post clients
+          Some comments from my happy clients.
         </motion.span>
         <motion.span
           className=" whitespace-nowrap self-end text-orange-500"
@@ -83,7 +83,7 @@ const Testimonials: FC = () => {
             x: transformBottom,
           }}
         >
-          some nice word from my post clients
+          Some comments from my happy clients.
         </motion.span>
       </h2>
       <div className="container">
