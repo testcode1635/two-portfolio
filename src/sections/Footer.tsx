@@ -3,11 +3,20 @@ import Button from "@/components/Button";
 import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import { useInView } from "motion/react";
 import { FC, MouseEvent, useEffect } from "react";
+import { AiFillTikTok } from "react-icons/ai";
+import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { ImLinkedin } from "react-icons/im";
 const navItems = [
   {
-    label: "About",
-    href: "#intro",
+    label: "Home",
+    href: "#hero",
   },
+  {
+    label: "About Us",
+    href: "#aboutus",
+  },
+
   {
     label: "Selected Works",
     href: "#projects",
@@ -17,12 +26,20 @@ const navItems = [
     href: "#testimonials",
   },
   {
-    label: "FAQs",
+    label: "Our Questions",
     href: "#faqs",
+  },
+  {
+    label: "My Blog",
+    href: "#projectsection",
   },
   {
     label: "Contact",
     href: "#contact",
+  },
+  {
+    label: "Footer",
+    href: "#footer",
   },
 ];
 const Footer: FC = () => {
@@ -42,20 +59,21 @@ const Footer: FC = () => {
     target.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <footer className="bg-[#20232B] text-white" id="contact">
+    <footer className="bg-[#20232B] text-white" id="footer">
       <div className="container">
-        <div className="section">
+        <div className="section mb-2">
           <div className="flex items-center gap-3">
-            <div className="size-3  bg-green-400 rounded-full animate-pulse"></div>
+            <div className="size-3 bg-green-400 rounded-full animate-pulse"></div>
             <span className="uppercase">One spot availabel for next month</span>
           </div>
           <div className="grid md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
               <h2
-                className="text-4xl mt-8 font-extralight md:text-7xl lg:text-8xl"
+                className="text-4xl mt-8 font-extralight md:text-5xl lg:text-6xl"
                 ref={scope}
               >
-                Enough talk, let&apos;s make someting great together
+                We provide Courtkachari services to bring a common platform to
+                all advocates in Bangladesh.
               </h2>
               <Button
                 variant="secondary"
@@ -81,7 +99,7 @@ const Footer: FC = () => {
                   </div>
                 }
               >
-                sujandev1635@gmail.com
+                courtkachari
               </Button>
             </div>
             <div className="">
@@ -94,10 +112,51 @@ const Footer: FC = () => {
                   </a>
                 ))}
               </nav>
+
+              <div className="flex gap-4 mt-8">
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <FaFacebook />
+                </a>
+
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <ImLinkedin />
+                </a>
+
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <FaSquareXTwitter />
+                </a>
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <FaInstagramSquare />
+                </a>
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <FaYoutube />
+                </a>
+                <a
+                  href=""
+                  className="size-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                >
+                  <AiFillTikTok />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <p className="py-16 text-white/30 text-sm">
+        <p className="py-6 text-white/30 text-sm text-center">
           Copyright 2025 &copy; sujan pramanik &buld;
           email:sujandev1635@gmail.com All rights reserved
         </p>

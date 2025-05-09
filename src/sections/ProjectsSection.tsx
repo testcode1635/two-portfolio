@@ -1,7 +1,7 @@
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
+import aiStartupLandingPage from "@/assets/images/aiStartupLandingPage.jpg";
+import darkSaasLandingPage from "@/assets/images/darkSaasLandingPage.jpg";
 import grainImage from "@/assets/images/grain.jpg";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import lightSaasLandingPage from "@/assets/images/lightSaasLandingPage.jpg";
 import Image from "next/image";
 const NewsSections = [
   {
@@ -44,18 +44,19 @@ const NewsSections = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projectsection">
       <div className="container">
         <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">
-            Real-world News
+          <p className="uppercase font-semibold text-xl tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">
+            THOUGHTS AND BLOGS
           </p>
         </div>
+        {/* <hr className="order-t-2 border-white/5 mt-4 md:mt-5" /> */}
         <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
           Featured Case Studies
         </h2>
         <p className="text-center md:text-lg lg:text-xl text-white/60 mt-4 max-w-md mx-auto">
-          See how I transfored concepts into engaging digital experiences
+          See how I transformed concepts into engaging advocate experiences.
         </p>
         <div className="flex flex-col mt-10 gap-20 md:mt-20">
           {NewsSections.map((news) => (

@@ -1,9 +1,9 @@
+import AboutUs from "@/sections/AboutUs";
+import Contact from "@/sections/Contact";
 import FAQs from "@/sections/FAQs";
 import Footer from "@/sections/Footer";
 import Header from "@/sections/Header";
 import Hero from "@/sections/Hero";
-import Intro from "@/sections/Intro";
-
 import Projects from "@/sections/Projects";
 
 import { ProjectsSection } from "@/sections/ProjectsSection";
@@ -13,11 +13,13 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <Intro />
+      <AboutUs />
+      {/* <Intro /> */}
       <Projects />
       <Testimonials />
       <FAQs />
       <ProjectsSection />
+      <Contact />
       <Footer />
     </>
   );

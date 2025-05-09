@@ -30,3 +30,6 @@ export default function RootLayout({
 }
 // Minimal Single Page Portfolio
 // https://www.youtube.com/watch?v=7ItfH0-4Xyc&t=276s
+// https://www.youtube.com/watch?v=ELssXP1sTC8
+// https://www.youtube.com/watch?v=w6z74VlnTSo
+// https://personalfolio.framer.website/

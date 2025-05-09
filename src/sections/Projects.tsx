@@ -9,24 +9,28 @@ import { FC } from "react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
-    name: "Artisan Brew Co.",
+    name: "Legal Counsel",
     image: image1,
   },
   {
-    name: "Wavelength Studios",
+    name: "Public Defender",
     image: image2,
   },
   {
-    name: "Nova Fitness",
+    name: "Legal Advocate",
     image: image3,
   },
   {
-    name: "Urban Plates",
+    name: "Victim Advocate",
     image: image4,
   },
   {
-    name: "Bloom Botanicals",
+    name: "Family Advocate",
     image: image5,
+  },
+  {
+    name: "Public Policy Specialist",
+    image: image3,
   },
 ];
 
@@ -34,9 +38,7 @@ const Projects: FC = () => {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <h1 className="text-4xl md:text-7xl lg:text-8xl">
-          Select Our Services
-        </h1>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl">Select My Services</h1>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {projects.map(({ name, image }) => (
             <a

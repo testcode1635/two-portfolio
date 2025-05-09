@@ -4,9 +4,14 @@ import { motion, useAnimate } from "motion/react";
 import { useEffect, useState } from "react";
 const navItems = [
   {
-    label: "About",
-    href: "#intro",
+    label: "Home",
+    href: "#hero",
   },
+  {
+    label: "About Us",
+    href: "#aboutus",
+  },
+
   {
     label: "Selected Works",
     href: "#projects",
@@ -16,12 +21,21 @@ const navItems = [
     href: "#testimonials",
   },
   {
-    label: "FAQs",
+    label: "Our Questions",
     href: "#faqs",
   },
   {
+    label: "My Blog",
+    href: "#projectsection",
+  },
+
+  {
     label: "Contact",
     href: "#contact",
+  },
+  {
+    label: "Footer",
+    href: "#footer",
   },
 ];
 function Header() {
@@ -111,6 +125,15 @@ function Header() {
     navScope,
     navAnimation,
   ]);
+  // const handleClickMobileViewItem = (e: MouseEvent<HTMLAnchorElement>) => {
+  //   e.preventDefault();
+  //   setIsOpen(false);
+  //   const url = new URL(e.currentTarget.href);
+  //   const hash = url.hash;
+  //   const target = document.querySelector(hash);
+  //   if (!target) return;
+  //   target.scrollIntoView({ behavior: "smooth" });
+  // };
   return (
     <header>
       <div
@@ -122,10 +145,16 @@ function Header() {
             <a
               href={href}
               key={label}
-              className="text-stone-200 border-t last:border-b border-stone-800 py-8 group/nav-item relative isolate"
+              className="text-stone-200 border-t last:border-b border-stone-800 py-4 group/nav-item relative isolate"
+              onClick={() => {
+                setIsOpen(false);
+                const target = document.querySelector(href);
+                if (!target) return;
+                target.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               <div className="container !mix-w-full flex items-center justify-between">
-                <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
+                <span className="text-2xl group-hover/nav-item:pl-4 transition-all duration-500">
                   {label}
                 </span>
                 <svg
@@ -143,7 +172,7 @@ function Header() {
                   />
                 </svg>
               </div>
-              <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
+              <div className="absolute w-full h-0 bg-[#030712] group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
             </a>
           ))}
         </nav>
@@ -200,7 +229,6 @@ function Header() {
                   />
                 </svg>
               </div>
-
               <button className="bg-orange-500 h-11 px-5 rounded-xl text-white border border-orange-500 uppercase hidden md:inline-flex items-center">
                 Contact Me
               </button>

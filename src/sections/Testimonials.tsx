@@ -65,7 +65,7 @@ const Testimonials: FC = () => {
   return (
     <section className="section" id="testimonials">
       <h2
-        className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden tracking-tighter"
+        className="text-4xl md:text-5xl lg:text-6xl flex flex-col overflow-hidden tracking-tighter"
         ref={titleRef}
       >
         {/* Testimonials */}
@@ -83,7 +83,7 @@ const Testimonials: FC = () => {
             x: transformBottom,
           }}
         >
-          Some comments from my happy clients.
+          আমার happy ক্লায়েন্টদের কাছ থেকে কিছু মন্তব্য।
         </motion.span>
       </h2>
       <div className="container">

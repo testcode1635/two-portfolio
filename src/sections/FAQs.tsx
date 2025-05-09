@@ -6,22 +6,22 @@ import { twMerge } from "tailwind-merge";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const faqs = [
   {
-    question: "How long does it take to build a website?",
+    question: "Domestic Violence (Prevention and Protection) Act, 2010",
     answer:
-      "It depends on the complexity of the website and the scope of the project.",
+      "The purpose of this Act is to prevent domestic violence and provide protection and legal remedies for women and children who are victims of abuse within family relationships.",
   },
   {
-    question: "What is your development process like?",
+    question: "Special Powers Act, 1974 – Deals with preventive detention",
     answer:
       "I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs.",
   },
   {
-    question: "Do you work with international clients?",
+    question: "Civil Procedure Code (CPC), 1908 – Procedures in civil courts?",
     answer:
       "Yes, I work with clients globally and can accommodate different time zones for meetings and communication.",
   },
   {
-    question: "What industries do you specialize in?",
+    question: "Muslim Family Laws Ordinance, 1961?",
     answer:
       "I have experience across various industries including technology, retail, hospitality, and professional services, bringing fresh perspectives to each project.",
   },
@@ -32,7 +32,9 @@ const FAQs: FC = () => {
   return (
     <section className="section" id="faqs">
       <div className="container">
-        <h2 className="text-4xl md:text-7xl lg:text-8xl">FAQs</h2>
+        <h2 className="text-4xl md:text-6xl lg:text-7xl">
+          Our General Questions
+        </h2>
         <div className="mt-10 md:mt-16 lg:mt-20">
           {faqs.map(({ question, answer }, faqIndex) => (
             <div
