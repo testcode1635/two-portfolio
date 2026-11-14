@@ -12,6 +12,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 interface FormData {
   name: string;
+  phone: number;
   email: string;
   message: string;
 }
@@ -21,6 +22,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    phone: 0,
     email: "",
     message: "",
   });
@@ -42,14 +44,14 @@ export default function Contact() {
       if (!response.ok) throw new Error("Failed to send message");
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", phone: 0, email: "", message: "" });
     } catch {
       setStatus("error");
     }
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -144,6 +146,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 name="name"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -159,9 +162,24 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-[#333945] dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </motion.div>
+             <motion.div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                Phone
+              </label>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-[#333945] dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
@@ -176,6 +194,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
+                placeholder="Enter your message"
                 value={formData.message}
                 onChange={handleChange}
                 required
