@@ -49,8 +49,7 @@ const Hero: FC = () => {
               className="text-4xl md:text-5xl lg:text-6xl mt-40 md:mt-0 "
               ref={scope}
             >
-              I work with experienced Premier Advocacy Solutions and StandStrong
-              Advocacy Services consultants.
+              Providing professional legal advice, strategic representation, and reliable solutions to protect clients rights and achieve justice.
             </motion.h1>
             <div className="flex flex-col md:flex-row md:items-center mt-10 items-start  gap-6">
               <motion.div

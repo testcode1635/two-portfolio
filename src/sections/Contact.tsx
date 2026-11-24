@@ -71,8 +71,8 @@ export default function Contact() {
           <motion.div>
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <p className="text-secondary">
-              I&apos;m always open to discussing new projects, creative ideas,
-              or opportunities to be part of your visions.
+              {/* I&apos;m always open to discussing new projects, creative ideas, */}
+              I&apos;m always available to discuss your legal concerns, provide professional legal guidance, or explore opportunities to work together toward effective legal solutions and justice.
             </p>
           </motion.div>
 

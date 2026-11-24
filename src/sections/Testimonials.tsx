@@ -9,16 +9,16 @@ import { FC, useRef, useState } from "react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const testimonials = [
   {
-    name: "Sarah Chen",
-    company: "Pixel Perfect",
-    role: "Head of Design",
+    name: "Kamal Hasan",
+    company: "jewellery Business",
+    role: "Businessman",
     quote:
-      "Alex's expertise in both technical development and design created a beautiful, high-performing website.",
+      "I found a solution to a complex land-related issue after consulting Advocate Firoz Mahmud. He was truly exceptional in his profession.",
     image: image1,
     imagePositionY: 0.2,
   },
   {
-    name: "Marcus Rodriguez",
+    name: "sujon",
     company: "Craft Coffee Co.",
     role: "Founder",
     quote:

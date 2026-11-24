@@ -21,14 +21,7 @@ function AboutUs() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-16">
           <div className="lg:pb-16">
             <p className="text-justify mt-6">
-              I’ve designed multiple web & mobile experiences for
-              multi-cross-platform devices from TV to Ipads, etc. I’ve worked
-              with small agencies and also with medium-sized companies. I
-              previously worked with one of India’s largest Ed-Tech startups,
-              Toppr which later got acquired by Byjus. Currently I'm designing
-              aesthetic and functional solutions for smallcase within the invest
-              team, to enhance financial accessibility and understanding for
-              Indian users.
+             I am a dedicated legal professional committed to providing trusted legal advice, effective representation, and strategic solutions. My goal is to protect clients rights, uphold justice, and deliver reliable legal services with integrity and professionalism.
             </p>
             <a href="">
               <button className="bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900 h-12 w-full md:w-auto px-6 rounded-xl mt-8 font-semibold inline-flex items-center justify-center gap-2">
